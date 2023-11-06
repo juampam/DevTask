@@ -10,7 +10,9 @@ public class User {
     public String getPassword() {
         return password;
     }
-
+    public User(){
+    
+    }
     public User(String username, String email, String password, boolean encrypt) {
         this.username = username;
         this.email = email;

@@ -10,7 +10,9 @@ public class ProjectController{
 	Scanner scanner = new Scanner(System.in);
 	Database db = new Database("projects.JSON");
 	Project project = new Project();
-	
+	User user = new User();
+	User usertest = new User("Yui","yui@sakuragaoka.edu.jp","123Gohan",true);
+
 	private String projectname;
 	private String description;
 	private String owner;
@@ -27,9 +29,9 @@ public class ProjectController{
 		projectname = scanner.nextLine();
 		System.out.println("Description:");
 		description = scanner.nextLine();
-		System.out.println("Elija el formato de variables para este pryecto:\n\t1. snake_case\n\t2. camelCase\n\t3. kebab-case ");
-		nom = scanner.nextLine();
-		switch(nom){
+	//	System.out.println("Elija el formato de variables para este pryecto:\n\t1. snake_case\n\t2. camelCase\n\t3. kebab-case ");
+	//	nom = scanner.nextLine();
+	/*	switch(nom){
 			case "1":
 				selected_nom = "snake_case";
 			break;
@@ -43,8 +45,8 @@ public class ProjectController{
 				System.out.println("invalid option, using camelCase by default");
 				selected_nom = "camelCase";
 			break;
-		}
- 		db.createProject(projectname,description,selected_nom,"tester","[]");	
+		}*/
+ 		db.createProject(projectname,description,usertest.getUsername(),"[]","[]");
 	}
 }
 

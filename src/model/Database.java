@@ -26,16 +26,19 @@ public class Database{
             		e.printStackTrace();
         	}
 	}
-	public void createProject(String name,String desc,String nom, String owner,String users){
+	public void createProject(String name,String desc, String owner,String users,String languages){
 		String mvalue="";
 	/*	for(int i = 0; i<values; i++){
 			mvalue += "\""+text +"@"+ valuemodel + "-" + i + "\": Null,\n\t\t";	
 		}*/
-		mvalue += "\"ID\":"+"\""+name +"@"+ owner+"\",\n\t\t";
-		mvalue += "\"Description\":"+"\""+desc+"\",\n\t\t";
-		mvalue += "\"Nomenclature\":"+"\""+nom+"\",\n\t\t";
-		mvalue += "\"Owner\":"+"\""+owner+"\",\n\t\t";
-		mvalue += "\"Users\":"+"\""+users+"\",\n\t\t";
+		String identificator = name.replace(" ","_");
+		mvalue += "\"IdProject\":"+"\""+owner +"/"+ identificator+"\",\n\t\t";
+		mvalue += "\"projectName\":"+"\""+ name +"\",\n\t\t";
+		mvalue += "\"description\":"+"\""+desc+"\",\n\t\t";
+	//	mvalue += "\"Nomenclature\":"+"\""+nom+"\",\n\t\t";
+		mvalue += "\"author\":"+"\""+owner+"\",\n\t\t";
+		mvalue += "\"devs\":"+"\""+users+"\",\n\t\t";
+		mvalue += "\"languages\":"+"\""+languages+"\",\n\t\t";
 
 		String ftext = "{\n\t\"" + name+"\":[\n\t\t{\t"+"\n\t\t"+mvalue+"\n\t\t}\n\t]," + "\n}";
 		try (FileWriter writer = new FileWriter(database, true);
