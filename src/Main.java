@@ -35,6 +35,8 @@ public class Main {
         System.out.println("Enjoy using our Software!");
         System.out.println("********************************************************************************");
 	int kha = 1;
+    ProjectController pc = new ProjectController();
+
 	while(kha == 1){
     		System.out.println("Please Select an Option:\n1. Login\n2. Register");
 		mainpage = scanner.nextLine();
@@ -54,9 +56,10 @@ public class Main {
 
 	}
 
-	System.out.println("Creando nuevo proyecto");
-	ProjectController pc = new ProjectController();
+//	System.out.println("Creando nuevo proyecto");
 	pc.createProject();
 
+    System.out.println("Leyendo JSON");
+//	pc.getProject();
     }
 }

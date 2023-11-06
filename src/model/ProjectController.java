@@ -48,5 +48,9 @@ public class ProjectController{
 		}*/
  		db.createProject(projectname,description,usertest.getUsername(),"[]","[]");
 	}
+/*	public void getProject(){
+
+		db.ReadFile("Yui/test2");
+	}*/
 }
 

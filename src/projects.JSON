@@ -1,98 +1,22 @@
-
-{
-	"Test":[
-		{	
-		"ID":"Test@tester",
-		"Description":"haciendo test de metodo",
-		"Nomenclature":"snake_case",
-		"Owner":"tester",
-		"Users":"tester",
-		
-		}
-	],
-}
-{
-	"Tet2":[
-		{	
-		"ID":"Tet2@tester",
-		"Description":"haciendo test",
-		"Nomenclature":"camelCase",
-		"Owner":"tester",
-		"Users":"[]",
-		
-		}
-	],
-}
-{
-	"Testppp":[
-		{	
-		"ID":"Testppp@tester",
-		"Description":"asdasdasdasdas",
-		"Nomenclature":"kebeb-case",
-		"Owner":"tester",
-		"Users":"[]",
-		
-		}
-	],
-}
-{
-	"Test with user":[
-		{	
-		"ID":"Test with user@null",
-		"Description":"test but now using the getUsername method to fill owner value",
-		"Nomenclature":"snake_case",
-		"Owner":"null",
-		"Users":"[]",
-		
-		}
-	],
-}
-{
-	"Test i do not know":[
-		{	
-		"ID":"Test i do not know@Yui",
-		"Description":"test but now using an static user",
-		"Nomenclature":"camelCase",
-		"Owner":"Yui",
-		"Users":"[]",
-		
-		}
-	],
-}
-{
-	"Test changed id project":[
-		{	
-		"ID":"Yui/Test changed id project",
-		"Description":"the same",
-		"Nomenclature":"snake_case",
-		"Owner":"Yui",
-		"Users":"[]",
-		
-		}
-	],
-}
-{
-	"Test underscore id":[
-		{	
-		"ID":"Yui/Test_underscore_id",
-		"Description":"testing the function to replace spaces with underscores",
-		"Nomenclature":"snake_case",
-		"Owner":"Yui",
-		"Users":"[]",
-		
-		}
-	],
-}
-{
-	"test change format":[
-		{	
-		"IdProject":"Yui/test_change_format",
-		"projectName":"test change format",
-		"description":"changing JSON format",
+[
+	{
+		"IdProject":"Yui/fsdfsd",
+		"projectName":"fsdfsd",
+		"description":"fsfddsaf",
 		"author":"Yui",
 		"devs":"[]",
-		"languages":"[]",
+		"languages":"[]"
 		
-		}
-	],
-}
+	}
+]
+
+	{
+		"IdProject":"Yui/dsadsadasd",
+		"projectName":"dsadsadasd",
+		"description":"dsadasdasdsadasd",
+		"author":"Yui",
+		"devs":"[]",
+		"languages":"[]"
+		
+	}
+]
