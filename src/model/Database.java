@@ -20,25 +20,36 @@ public class Database{
         	return false;
         }
     }
-	public void replaceF(char caracterViejo, char caracterNuevo){
-		 String nombreArchivo = "projects.JSON";
-		 try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo));
-             BufferedWriter bw = new BufferedWriter(new FileWriter("temp.txt"))) {
-            int caracterLeido;
-            while ((caracterLeido = br.read()) != -1) {
-                char caracter = (char) caracterLeido;
-                if (caracter == caracterViejo) {
-                    bw.write(caracterNuevo);
-                } else {
-                    bw.write(caracter);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+	public void replaceF(){
+		 String filename = "projects.JSON";
+		try (BufferedReader br = new BufferedReader(new FileReader(filename));
+         BufferedWriter bw = new BufferedWriter(new FileWriter("temp.txt"))) {
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            int cmatch = 0;
+            StringBuilder nuevaLinea = new StringBuilder();
 
-        // Renombrar el archivo temporal al nombre original
-        File archivoOriginal = new File(nombreArchivo);
+            for (char caracter : linea.toCharArray()) {
+                if (caracter == '[') {
+                    cmatch++;
+                } else if (caracter == ']') {
+                    if (cmatch > 0) {
+                        cmatch--;
+                    } else {
+                       
+                        continue;
+                    }
+                }
+                nuevaLinea.append(caracter);
+            }
+            
+            bw.write(nuevaLinea.toString());
+            bw.newLine();
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+        File archivoOriginal = new File(filename);
         File archivoTemporal = new File("temp.txt");
         archivoOriginal.delete();
         archivoTemporal.renameTo(archivoOriginal);
@@ -77,10 +88,10 @@ public class Database{
 		mvalue += "\"devs\":"+"\""+users+"\",\n\t\t";
 		mvalue += "\"languages\":"+"\""+languages+"\"\n\t\t";
 		if(filechecker == true){
-			ftext = "[\n\t{" +"\n\t\t"+mvalue+"\n\t}" + "\n]";
+			ftext = "[\n\t{" +"\n\t\t"+mvalue+"\n\t}" + "\n ]";
 		}else{
-			replaceF(']',',');
-			ftext = "\n\t{" +"\n\t\t"+mvalue+"\n\t}" + "\n]";
+			replaceF();
+			ftext = ",\n\t{" +"\n\t\t"+mvalue+"\n\t}" + "\n ]";
 		}
 		try (FileWriter writer = new FileWriter(database, true);
              		BufferedWriter bufferWriter = new BufferedWriter(writer);
@@ -90,7 +101,7 @@ public class Database{
             		e.printStackTrace();
         	}
 	}
-/*
+
   public  void ReadFile(String projectId) {
     String filePath = "projects.JSON";
 	String fileContent = "";
@@ -108,17 +119,18 @@ public class Database{
 	}
 
 	fileContent = contentBuilder.toString();
-	String[] separator = fileContent.split("{");
+	String[] separator = fileContent.split("\n,");
+	//System.out.println(separator[0]);
 	for(int i=0;i<separator.length;i++){
 		if(separator[i].contains(projectId)){
-			System.out.println(separator[i]);
+			//System.out.println(separator[i]);
 			String[] nline = separator[i].split("\n");
 			for(int x=0;x<nline.length;x++){
 				System.out.println(nline[x]);
 			}
 		}
 	}
-  }*/
+  }
 }
 
 
