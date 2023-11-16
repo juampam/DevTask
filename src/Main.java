@@ -10,7 +10,7 @@ public class Main {
 	String mainpage = "";
     ProjectController pc = new ProjectController();
 
-   /*
+   
 	int kha = 1;
 
 	while(kha == 1){
@@ -31,9 +31,9 @@ public class Main {
 		}
 
 	}
-*/
-//	System.out.println("Creando nuevo proyecto");
-//	pc.createProject();
+
+	System.out.println("Creando nuevo proyecto");
+	pc.createProject();
 
     System.out.println("Leyendo JSON");
 	pc.getProject();

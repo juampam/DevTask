@@ -13,7 +13,7 @@ public class Database{
 	 
 
 	public boolean checker() {
-        File archivo = new File("projects.JSON"); // Reemplaza "ruta_del_archivo" con la ruta de tu archivo
+        File archivo = new File("projects.JSON");
         if (archivo.exists() && archivo.length() == 0) {
            return true;
         } else {
